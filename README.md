@@ -31,14 +31,14 @@ Four key architectural innovations enable Aime Browser-USE's human-like web inte
 
 To ensure valid and comparable results, we first filtered **16 unachievable tasks** from the WebVoyager test suite. These tasks failed due to website version updates (e.g., removed sections), content expiration (e.g., resource is no longer available), or authentication requirements (e.g., access tokens are required). This data cleaning follows industry practices (e.g., browser use, KURA AI), where unachievable cases are also excluded in evaluations. We then evaluated the **remaining 627 tasks**.
 
-**Example of an Unachievable Task:**
-- **Website Version Update**:  
+> **Example of an Unachievable Task:**
+> - **Website Version Update**:  
   “Use the browser to visit https://www.bbc.com/news/, find the Market Data section, and identify the data source company.”  
   _This task failed because the BBC News website no longer has a "Market Data" section after its redesign._
-- **Content Expiration**:  
+> - **Content Expiration**:  
   “Use the browser to visit https://huggingface.co/, open space: argilla/notux-chat-ui and interact with it by asking it 'which team trained you'. What is its answer?”  
   _This task failed because the space argilla/notux-chat-ui has been deleted._
-- **Authentication Requirement**:  
+> - **Authentication Requirement**:  
   “Use the browser: https://huggingface.co/, Use the Huggingface Inference API to generate a short story about a dragon and a wizard.”  
   _This task failed because a Hugging Face API key is required to complete it._
 
@@ -103,4 +103,4 @@ As an industry-standard benchmark, WebVoyager exhibits critical gaps in  several
 - **Repetitive Task Patterns**:  
   While most achieved ≥90% success, Aime Browser-Use's 100% success rate in Booking is context-specific — its test tasks were predominantly repetitive, single-action workflows, which do not fully represent complex interaction scenarios. Similarly, most Google Flight tasks follow the same pattern of "find a flight from xxx to xxx on xxx", which means managing one workflow would succeed in all the other cases.
 
-> While emerging evaluation frameworks address these limitations through offline testing environments, diversified task design, expanded coverage and task trajectory, WebVoyager remains the de facto standard. We call for the community to prioritize the integration of advanced evaluation methodologies to drive the capabilities of browser use agents toward a broader horizon.
+While emerging evaluation frameworks address these limitations through offline testing environments, diversified task design, expanded coverage and task trajectory, WebVoyager remains the de facto standard. We call for the community to prioritize the integration of advanced evaluation methodologies to drive the capabilities of browser use agents toward a broader horizon.
