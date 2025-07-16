@@ -95,8 +95,8 @@ While emerging evaluation frameworks address these limitations through offline t
 
 ## Appendix: Evaluation Result Details
 
-<details>
-  <summary>click to expand the evaluation result details</summary>
+
+  <div style="max-height:400px; width:1000px; overflow:auto; border:1px solid #eee; border-radius:6px; margin:10px 0;">
 
 | Task                                                    | Website                 | Result        |
 | :----------------------------------------------------------- | :------------------- | :---------- |
@@ -743,4 +743,4 @@ While emerging evaluation frameworks address these limitations through offline t
 | go to  https://www.bbc.com/news/,Identify the top headline in the World News section on BBC News and describe the region it is related to. | BBC                  | unreachable |
 | go to  https://www.bbc.com/news/,In the World News section,find the latest war situations of Middle East and provide a brief summary. | BBC                  | unreachable |
 | go to https://www.bbc.com/news/，Find the Market Data section on BBC News and tell me which company the data comes from. | BBC                  | unreachable |
-</details>
+</div>
