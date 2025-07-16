@@ -1,10 +1,10 @@
 # Aime Browser-USE: New SOTA in WebVoyager
 
-We are excited to announce that **Aime Browser-Use**, as the new State-of-the-Art (SOTA) web agent, has achieved a **92.34% success rate** on the WebVoyager benchmark.  
-Aime is an enterprise-level AI Agent framework targeting workplace scenarios.  
-Aime Browser-Use, as part of the Aime project, is a web agent that understands and interacts with the browser to automate browser-related tasks in the office.
+We are excited to announce that **Aime Browser-Use**, as the new State-of-the-Art (SOTA) web agent, has achieved a **92.34% success rate** on the WebVoyager benchmark. Aime is an enterprise-level AI Agent framework targeting workplace scenarios. Aime Browser-Use, as part of the Aime project, is a web agent that understands and interacts with the browser to automate browser-related tasks in the office.
 
-![Aime Browser-Use](figures/bar-data-color.png)
+<div align="center">
+  <img src="figures/bar-data-color.png" alt="Aime Browser-Use" width="400"/>
+</div>
 
 ---
 
@@ -29,9 +29,7 @@ Four key architectural innovations enable Aime Browser-USE's human-like web inte
 
 #### Exclude Unreachable Tasks
 
-To ensure valid and comparable results, we first filtered 16 unachievable tasks from the WebVoyager test suite.  
-These tasks failed due to website version updates, content expiration, or authentication requirements.  
-This data cleaning follows industry practices (e.g., browser use, KURA AI).
+To ensure valid and comparable results, we first filtered **16 unachievable tasks** from the WebVoyager test suite. These tasks failed due to website version updates (e.g., removed sections), content expiration (e.g., resource is no longer available), or authentication requirements (e.g., access tokens are required). This data cleaning follows industry practices (e.g., browser use, KURA AI), where unachievable cases are also excluded in evaluations. We then evaluated the **remaining 627 tasks**.
 
 **Example of an Unachievable Task:**
 - **Website Version Update**:  
@@ -46,28 +44,29 @@ This data cleaning follows industry practices (e.g., browser use, KURA AI).
 
 #### Update Date-Sensitive Tasks
 
-For booking websites like Booking.com and Google Flights, content from past dates is not available anymore.  
-For those cases, we advance the date by one or two years to bring it to the available range at the time the evaluation is conducted (June 2025).
-
-**After filtering, task distribution across websites is visualized as follows:**  
-![Task Distribution](figures/testcases_used.png)
+Another issue with the original WebVoyager dataset is temporal relevance. For booking websites like Booking.com and Google Flights, content from past dates is not available anymore. For those cases, we advance the date by one or two years to bring it to the available range at the time the evaluation is conducted (June 2025).
+After filtering, task distribution across websites is visualized as follows: 
+<div align="center">
+  <img src="figures/testcases_used.png" alt="Task Distribution" width="400"/>
+</div>
 
 ---
 
 ### Evaluation Result
 
-Aime Browser-Use achieved an overall success rate of **92.34%**, with 579 out of 627 tasks completed successfully.  
-Website-specific success rates are summarized in the figure below.
+Aime Browser-Use achieved an overall success rate of **92.34%**, with **579 out of 627 tasks** completed successfully. Website-specific success rates are summarized in the figure below. These results validate Aime Browser-Use’s state-of-the-art capabilities: all tested websites achieved a success rate exceeding 80%, with nearly all consistently surpassing 85% — including 3 sites that attained a perfect 100% success rate.
 
-![Evaluation Result](figures/success_rate.png)
+<div align="center">
+  <img src="figures/success_rate.png" alt="Evaluation Result" width="400"/>
+</div>
 
 Aime Browser-USE demonstrated robust performance across diverse scenarios, with notable patterns by category:
 
 | Website Category      | Characteristics                                                                 | Success Rate Pattern         | Examples                  |
 |----------------------|----------------------------------------------------------------------------------|-----------------------------|---------------------------|
-| Information-Retrieval| Static content dominance; tasks focused on querying/extracting information        | Top-performing domain (≥95%)| BBC, Apple, Allrecipes    |
-| Operation-Centric    | Complex interactions (e.g., form-filling, filtering)                             | Stable at ≥90%              | Google Flight, Amazon, Booking |
-| Exploratory          | Unstructured exploration (deeply nested info, ambiguous navigation)               | Relatively lower success    | Google Maps, Wolfram Alpha|
+| Information-Retrieval| Static content dominance; tasks focused on querying/extracting information with minimal interaction     | Top-performing domain (≥95% success)| BBC, Apple, Allrecipes    |
+| Operation-Centric    | Complex interactions (e.g., form-filling, filtering)                             | Stable at ≥90% (varies with task complexity)             | Google Flight, Amazon, Booking |
+| Exploratory          | Unstructured exploration (deeply nested info, ambiguous navigation)               | Relatively lower success (open-ended goal challenge)   | Google Maps, Wolfram Alpha|
 
 ---
 
@@ -78,31 +77,30 @@ Aime Browser-USE demonstrated robust performance across diverse scenarios, with 
 #### Core Strengths
 
 - **Information-Retrieval Proficiency**:  
-  High success in static content environments (e.g., Cambridge Dictionary, Apple, BBC) stems from the synergy of DOM parsing for structured text and VLM-powered visual analysis.
+   High success in static content environments (e.g., Cambridge Dictionary, Apple, BBC) stems from the synergy of DOM parsing for structured text and VLM-powered visual analysis. This dual modality enables precise extraction of both textual and visual content, which boosts the  success rate of information retrieval tasks.
 - **Browser Interaction Proficiency**:  
-  On high-interactivity platforms (e.g., Booking, Google Flights, Amazon), we achieve success rates of ≥90% with a comprehensive tool set and robust architecture.
+  On high-interactivity platforms (e.g., Booking, Google Flights, Amazon), we achieve success rates of ≥90% with a comprehensive tool set consisting of common browser interaction types, as well as the flexibility and robustness boosted by PlanAct and Dynamic Agent architecture.
 
 #### Current Bottlenecks
 
 - **Exploratory Challenges**:  
-  For tasks requiring autonomous navigation to locate deeply nested information, Aime Browser-Use is currently often confused by multi-layered webpages.
+  For tasks requiring autonomous navigation to locate deeply nested information, Aime Browser-Use is currently often confused by multi-layered webpages and terminates the exploration earlier than expected.
 - **Dynamic Content Parsing**:  
-  Aime struggles with dynamic canvas rendering, lazy-loaded elements, and other complex demonstrations.
+  While WebVoyager’s test corpus lacks such challenges, Aime struggles with dynamic canvas rendering, lazy-loaded elements, and other complex demonstrations. Existing text-vision integration (DOM + VLM) proves insufficient for these edge cases.
 
 ---
 
 ### Limitations of WebVoyager Benchmark
 
-As an industry-standard benchmark, WebVoyager exhibits critical gaps in several aspects:
+As an industry-standard benchmark, WebVoyager exhibits critical gaps in  several aspects, undermining a comprehensive technical evaluation:
 
 - **Temporal Relevance**:  
-  The rapid evolution of webpages and time-bound task data renders many test scenarios obsolete.
+  The rapid evolution of webpages and time-bound task data (e.g., news feeds) renders many test scenarios obsolete, diminishing the reproducibility and comparative utility of long-term results.
 - **Task Distribution Biases**:  
-  Over 85% of tasks focus on read-heavy scenarios, while write-heavy scenarios account for <15%.
+  Over 85% of tasks focus on read-heavy scenarios like information extraction, while write-heavy scenarios requiring interactive operations (e.g., form submissions, CAPTCHA resolution, anti-bot maneuvers) account for <15%. This skewed distribution fails to assess agents’ capabilities in complex, dynamic workflows.
 - **Limited Task Difficulty**:  
-  Predominantly short, isolated tasks lack multi-step, cross-page orchestration.
+  Predominantly short, isolated tasks lack multi-step, cross-page orchestration (e.g., session persistence, stateful decision-making), which limits the evaluation of strategic planning and execution.
 - **Repetitive Task Patterns**:  
-  Most tasks are repetitive, single-action workflows, which do not fully represent complex interaction scenarios.
+  While most achieved ≥90% success, Aime Browser-Use's 100% success rate in Booking is context-specific — its test tasks were predominantly repetitive, single-action workflows, which do not fully represent complex interaction scenarios. Similarly, most Google Flight tasks follow the same pattern of "find a flight from xxx to xxx on xxx", which means managing one workflow would succeed in all the other cases.
 
-> While emerging evaluation frameworks address these limitations, WebVoyager remains the de facto standard.  
-> We call for the community to prioritize the integration of advanced evaluation methodologies to drive the capabilities of browser use agents toward a broader horizon.
+> While emerging evaluation frameworks address these limitations through offline testing environments, diversified task design, expanded coverage and task trajectory, WebVoyager remains the de facto standard. We call for the community to prioritize the integration of advanced evaluation methodologies to drive the capabilities of browser use agents toward a broader horizon.
