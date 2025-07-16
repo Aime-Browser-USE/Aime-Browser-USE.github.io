@@ -3,7 +3,7 @@
 We are excited to announce that **Aime Browser-Use**, as the new State-of-the-Art (SOTA) web agent, has achieved a **92.34% success rate** on the WebVoyager benchmark. Aime is an enterprise-level AI Agent framework targeting workplace scenarios. Aime Browser-Use, as part of the Aime project, is a web agent that understands and interacts with the browser to automate browser-related tasks in the office.
 
 <div align="center">
-  <img src="figures/bar-data-color.png" alt="Aime Browser-Use" width="400"/>
+  <img src="figures/bar-data-color.png" alt="Aime Browser-Use" width="600"/>
 </div>
 
 ---
@@ -47,7 +47,7 @@ To ensure valid and comparable results, we first filtered **16 unachievable task
 Another issue with the original WebVoyager dataset is temporal relevance. For booking websites like Booking.com and Google Flights, content from past dates is not available anymore. For those cases, we advance the date by one or two years to bring it to the available range at the time the evaluation is conducted (June 2025).
 After filtering, task distribution across websites is visualized as follows: 
 <div align="center">
-  <img src="figures/testcases_used.png" alt="Task Distribution" width="400"/>
+  <img src="figures/testcases_used.png" alt="Task Distribution" width="600"/>
 </div>
 
 ---
@@ -57,7 +57,7 @@ After filtering, task distribution across websites is visualized as follows:
 Aime Browser-Use achieved an overall success rate of **92.34%**, with **579 out of 627 tasks** completed successfully. Website-specific success rates are summarized in the figure below. These results validate Aime Browser-Use’s state-of-the-art capabilities: all tested websites achieved a success rate exceeding 80%, with nearly all consistently surpassing 85% — including 3 sites that attained a perfect 100% success rate.
 
 <div align="center">
-  <img src="figures/success_rate.png" alt="Evaluation Result" width="400"/>
+  <img src="figures/success_rate.png" alt="Evaluation Result" width="600"/>
 </div>
 
 Aime Browser-USE demonstrated robust performance across diverse scenarios, with notable patterns by category:
