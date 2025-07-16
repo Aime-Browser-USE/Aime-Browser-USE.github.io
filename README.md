@@ -3,7 +3,7 @@
 We are excited to announce that **Aime Browser-Use**, as the new State-of-the-Art (SOTA) web agent, has achieved a **92.34% success rate** on the WebVoyager benchmark. Aime is an enterprise-level AI Agent framework targeting workplace scenarios. Aime Browser-Use, as part of the Aime project, is a web agent that understands and interacts with the browser to automate browser-related tasks in the office.
 
 <div align="center">
-  <img src="figures/bar-data-color.png" alt="Aime Browser-Use" width="400"/>
+  <img src="figures/bar-data-color.png" alt="Aime Browser-Use" width="600"/>
 </div>
 ## Agent Architecture
 
@@ -26,14 +26,14 @@ Four key architectural innovations enable Aime Browser-USE's human-like web inte
 
 To ensure valid and comparable results, we first filtered **16 unachievable tasks** from the WebVoyager test suite. These tasks failed due to website version updates (e.g., removed sections), content expiration (e.g., resource is no longer available), or authentication requirements (e.g., access tokens are required). This data cleaning follows industry practices (e.g., browser use, KURA AI), where unachievable cases are also excluded in evaluations. We then evaluated the **remaining 627 tasks**.
 
-**Example of an Unachievable Task:**
-- **Website Version Update**:  
+> **Example of an Unachievable Task:**
+> - **Website Version Update**:  
   “Use the browser to visit https://www.bbc.com/news/, find the Market Data section, and identify the data source company.”  
   _This task failed because the BBC News website no longer has a "Market Data" section after its redesign._
-- **Content Expiration**:  
+> - **Content Expiration**:  
   “Use the browser to visit https://huggingface.co/, open space: argilla/notux-chat-ui and interact with it by asking it 'which team trained you'. What is its answer?”  
   _This task failed because the space argilla/notux-chat-ui has been deleted._
-- **Authentication Requirement**:  
+> - **Authentication Requirement**:  
   “Use the browser: https://huggingface.co/, Use the Huggingface Inference API to generate a short story about a dragon and a wizard.”  
   _This task failed because a Hugging Face API key is required to complete it._
 
@@ -42,14 +42,14 @@ To ensure valid and comparable results, we first filtered **16 unachievable task
 Another issue with the original WebVoyager dataset is temporal relevance. For booking websites like Booking.com and Google Flights, content from past dates is not available anymore. For those cases, we advance the date by one or two years to bring it to the available range at the time the evaluation is conducted (June 2025).
 After filtering, task distribution across websites is visualized as follows: 
 <div align="center">
-  <img src="figures/testcases_used.png" alt="Task Distribution" width="400"/>
+  <img src="figures/testcases_used.png" alt="Task Distribution" width="600"/>
 </div>
 ### Evaluation Result
 
 Aime Browser-Use achieved an overall success rate of **92.34%**, with **579 out of 627 tasks** completed successfully. Website-specific success rates are summarized in the figure below. These results validate Aime Browser-Use’s state-of-the-art capabilities: all tested websites achieved a success rate exceeding 80%, with nearly all consistently surpassing 85% — including 3 sites that attained a perfect 100% success rate.
 
 <div align="center">
-  <img src="figures/success_rate.png" alt="Evaluation Result" width="400"/>
+  <img src="figures/success_rate.png" alt="Evaluation Result" width="600"/>
 </div>
 
 Aime Browser-USE demonstrated robust performance across diverse scenarios, with notable patterns by category:
@@ -91,7 +91,7 @@ As an industry-standard benchmark, WebVoyager exhibits critical gaps in  several
 - **Repetitive Task Patterns**:  
   While most achieved ≥90% success, Aime Browser-Use's 100% success rate in Booking is context-specific — its test tasks were predominantly repetitive, single-action workflows, which do not fully represent complex interaction scenarios. Similarly, most Google Flight tasks follow the same pattern of "find a flight from xxx to xxx on xxx", which means managing one workflow would succeed in all the other cases.
 
-> While emerging evaluation frameworks address these limitations through offline testing environments, diversified task design, expanded coverage and task trajectory, WebVoyager remains the de facto standard. We call for the community to prioritize the integration of advanced evaluation methodologies to drive the capabilities of browser use agents toward a broader horizon.
+While emerging evaluation frameworks address these limitations through offline testing environments, diversified task design, expanded coverage and task trajectory, WebVoyager remains the de facto standard. We call for the community to prioritize the integration of advanced evaluation methodologies to drive the capabilities of browser use agents toward a broader horizon.
 
 ## Appendix: Evaluation Result Details
 
