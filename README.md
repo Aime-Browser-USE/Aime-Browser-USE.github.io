@@ -95,7 +95,7 @@ While emerging evaluation frameworks address these limitations through offline t
 
 ## Appendix: Evaluation Result Details
 
-| 任务描述                                                     | 网站                 | 结果        |
+| Task                                                    | Website                 | Result        |
 | :----------------------------------------------------------- | :------------------- | :---------- |
 | go to https://www.apple.com/，Check the release date and price for the latest version of the iPhone. | Apple                | success     |
 | go to https://www.apple.com/，Find solutions on Apple's website if you forgot your Apple ID password. | Apple                | success     |
