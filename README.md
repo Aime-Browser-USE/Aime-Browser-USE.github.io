@@ -95,6 +95,9 @@ While emerging evaluation frameworks address these limitations through offline t
 
 ## Appendix: Evaluation Result Details
 
+<details>
+  <summary>click to expand the evaluation result details</summary>
+
 | Task                                                    | Website                 | Result        |
 | :----------------------------------------------------------- | :------------------- | :---------- |
 | go to https://www.apple.com/，Check the release date and price for the latest version of the iPhone. | Apple                | success     |
@@ -740,3 +743,4 @@ While emerging evaluation frameworks address these limitations through offline t
 | go to  https://www.bbc.com/news/,Identify the top headline in the World News section on BBC News and describe the region it is related to. | BBC                  | unreachable |
 | go to  https://www.bbc.com/news/,In the World News section,find the latest war situations of Middle East and provide a brief summary. | BBC                  | unreachable |
 | go to https://www.bbc.com/news/，Find the Market Data section on BBC News and tell me which company the data comes from. | BBC                  | unreachable |
+</details>
